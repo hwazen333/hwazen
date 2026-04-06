@@ -1,17 +1,13 @@
-name: Simple CI Pipeline
+name: Simple CI/CD Pipeline
 
 on:
   push:
     branches:
       - master
       - main
-  pull_request:
-    branches:
-      - master
-      - main
 
 jobs:
-  check-project:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,5 +20,5 @@ jobs:
       - name: Check if index.html exists
         run: test -f index.html
 
-      - name: Print success message
-        run: echo "CI pipeline completed successfully"
+      - name: Simulate deployment
+        run: echo "Deploy step completed successfully"
